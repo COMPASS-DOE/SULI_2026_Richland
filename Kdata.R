@@ -53,7 +53,7 @@ Minerals=pivot_longer(Mineralogy, 4:9)
 #and its horizons. 
 Minerals_summary=
 Minerals%>%
-  group_by(plot, horizon, name)%>%
+  group_by(plot, name)%>%
   summarize(mean=mean(value, na.rm=T))%>%
   mutate(name2=factor(name, levels = c("Quartz", "Mica", "Albite", "Microcline",
                                        "Kaolinite", "Chlorite")))%>%
